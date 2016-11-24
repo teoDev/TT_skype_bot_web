@@ -14,7 +14,8 @@ angular
     'ngCookies',
     'ngMessages',
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'spring-data-rest'
   ])
   .config(function ($routeProvider) {
     $routeProvider
