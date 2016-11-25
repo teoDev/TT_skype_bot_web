@@ -1,0 +1,182 @@
+{
+  "_embedded" : {
+    "questions" : [ {
+      "question" : "3JA7tefrQxBGjv9weduk",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/1"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/1"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/1/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/1/tags"
+        }
+      }
+    }, {
+      "question" : "xEmslnTWWYESx0zL0SWM",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/2"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/2"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/2/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/2/tags"
+        }
+      }
+    }, {
+      "question" : "mu0IrjPX81vQrrOaRrje",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/3"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/3"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/3/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/3/tags"
+        }
+      }
+    }, {
+      "question" : "sNJkR8qNH3YOoc4J4uyY",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/4"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/4"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/4/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/4/tags"
+        }
+      }
+    }, {
+      "question" : "ltwlQzm2vaKrAxz3jsmN",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/5"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/5"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/5/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/5/tags"
+        }
+      }
+    }, {
+      "question" : "4vGM1VZaVvfszpDrHWaz",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/6"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/6"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/6/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/6/tags"
+        }
+      }
+    }, {
+      "question" : "xX5fxLGBAxwzajpVkQij",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/7"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/7"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/7/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/7/tags"
+        }
+      }
+    }, {
+      "question" : "ddGB3XGHEoVQfrciOYFO",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/8"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/8"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/8/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/8/tags"
+        }
+      }
+    }, {
+      "question" : "TaeSDibXedl0qA4DKKKr",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/9"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/9"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/9/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/9/tags"
+        }
+      }
+    }, {
+      "question" : "aR1UMRilROqYtLruXDKk",
+      "_links" : {
+        "self" : {
+          "href" : "http://192.168.173.233:8080/questions/10"
+        },
+        "question" : {
+          "href" : "http://192.168.173.233:8080/questions/10"
+        },
+        "answers" : {
+          "href" : "http://192.168.173.233:8080/questions/10/answers"
+        },
+        "tags" : {
+          "href" : "http://192.168.173.233:8080/questions/10/tags"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://192.168.173.233:8080/questions"
+    },
+    "profile" : {
+      "href" : "http://192.168.173.233:8080/profile/questions"
+    },
+    "search" : {
+      "href" : "http://192.168.173.233:8080/questions/search"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 10,
+    "totalPages" : 1,
+    "number" : 0
+  }
+}

@@ -1,18 +1,20 @@
 
 <div class="row">
 
+  <div class="search hidden-xs hidden-sm">
 
+    <tags-input ng-model="main.chosenTags" display-property="name">
+      <auto-complete source="main.tags"></auto-complete>
+    </tags-input>
+  </div>
   <h3 ></h3>
 
 <div class="table-container">
   <table class="table table-filter">
     <tbody>
-    <tr data-status="pagado" ng-repeat="question in main.questions">
+    <tr data-status="pagado" ng-repeat="question in main.questions | tagFilter:main.chosenTags">
       <td>
-        <div class="ckbox">
-          <input type="checkbox" id="checkbox1">
-          <label for="checkbox1"></label>
-        </div>
+
       </td>
       <td>
         <a href="javascript:;" class="star">
@@ -20,7 +22,7 @@
         </a>
       </td>
       <td>
-        <div class="media" data-toggle="collapse" data-target="#answer_1">
+        <div class="media" >
           <a href="#" class="pull-left">
             <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
           </a>
@@ -30,42 +32,52 @@
               {{question.question}}
               <span class="pull-right pagado">(Pagado)</span>
             </h4>
+
             <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
-
-
               <div class="item-content-block tags">
 
                 <a href="#" ng-repeat="tag in question.tags">{{tag.name}}</a>
               </div>
+            <div class="expand">
+              <p>
+              <div  class="label" ng-if="question.expanded==false" data-toggle="collapse" data-target="#{{question.question}}" ng-click="question.expanded=true;main.Question.loadAnswers(question);">
+                <span    class="glyphicon glyphicon-chevron-down" ></span>Show answers
+              </div>
+              <div class="label" ng-if="question.expanded==true" data-toggle="collapse" data-target="#{{question.question}}"  ng-click="question.expanded=false;">
+                <span    class="glyphicon glyphicon-chevron-up" ></span>Hide answers
+
+              </div>
+            <div class="label label-info questionAmount">
+                    {{question.answers.length}}</div>
+            </div></p>
+            </div>
 
 
 
 
-            <div class="row answer collapse" id="answer_1">
+            <div class="row answer collapse" id="{{question.question}}">
               <div class="panel panel-default widget">
                 <div class="panel-heading">
                   <span class="glyphicon glyphicon-comment"></span>
                   <h3 class="panel-title">
                     Recent Answers</h3>
-                <span class="label label-info">
-                    78</span>
-                </div>
+
                 <div class="panel-body">
                   <ul class="list-group">
-                    <li class="list-group-item">
+                    <li class="list-group-item"  ng-repeat="answer in question.answers">
                       <div class="row">
                         <div class="col-xs-2 col-md-1">
-                          <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                        <div class="col-xs-10 col-md-11">
+                          <img src="images/user2.png" class="img-circle img-responsive" alt="" /></div>
+                        <div class="col-xs-8 col-md-9">
                           <div>
                             <a href="http://www.jquery2dotnet.com/2013/10/google-style-login-page-desing-usign.html">
-                              Google Style Login Page Design Using Bootstrap</a>
+                             Title</a>
                             <div class="mic-info">
                               By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013
                             </div>
                           </div>
                           <div class="comment-text">
-                            Awesome design
+                            {{answer.content}}
                           </div>
                           <div class="action">
                             <button type="button" class="btn btn-primary btn-xs" title="Edit">
@@ -79,62 +91,19 @@
                             </button>
                           </div>
                         </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-xs-2 col-md-1">
-                          <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                        <div class="col-xs-10 col-md-11">
-                          <div>
-                            <a href="http://bootsnipp.com/BhaumikPatel/snippets/Obgj">Admin Panel Quick Shortcuts</a>
-                            <div class="mic-info">
-                              By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
-                            </div>
-                          </div>
-                          <div class="comment-text">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                          </div>
-                          <div class="action">
+                        <div class="col-xs-2 col-md-2">
+                          <div class="rate">
+                            <div class="btn-group-vertical pull-right">
                             <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                              <span class="glyphicon glyphicon-pencil"></span>
+                              <span class="glyphicon glyphicon-plus"></span>
                             </button>
+                              <button type="button" class="btn  btn-xs" title="Score">
+                                <span >{{answer.grade}}</span>
+                              </button>
                             <button type="button" class="btn btn-success btn-xs" title="Approved">
-                              <span class="glyphicon glyphicon-ok"></span>
+                              <span class="glyphicon glyphicon-minus"></span>
                             </button>
-                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                              <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
-                      <div class="row">
-                        <div class="col-xs-2 col-md-1">
-                          <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                        <div class="col-xs-10 col-md-11">
-                          <div>
-                            <a href="http://bootsnipp.com/BhaumikPatel/snippets/4ldn">Cool Sign Up</a>
-                            <div class="mic-info">
-                              By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
                             </div>
-                          </div>
-                          <div class="comment-text">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                          </div>
-                          <div class="action">
-                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                              <span class="glyphicon glyphicon-pencil"></span>
-                            </button>
-                            <button type="button" class="btn btn-success btn-xs" title="Approved">
-                              <span class="glyphicon glyphicon-ok"></span>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                              <span class="glyphicon glyphicon-trash"></span>
-                            </button>
                           </div>
                         </div>
                       </div>

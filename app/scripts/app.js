@@ -15,7 +15,8 @@ angular
     'ngMessages',
     'ngResource',
     'ngRoute',
-    'spring-data-rest'
+    'spring-data-rest',
+    'ngTagsInput'
   ])
   .config(function ($routeProvider) {
     $routeProvider
