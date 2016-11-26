@@ -1090,9 +1090,10 @@ tags-input .autocomplete .suggestion-item {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000;
   background-color: #fff;
+  border-bottom: 1px solid rgba(13, 23, 46,0.5);
+  font-size: 11px;
 }
 tags-input .autocomplete .suggestion-item.selected {
   color: #fff;
@@ -1103,7 +1104,8 @@ tags-input .autocomplete .suggestion-item.selected em {
   background-color: #0097cf;
 }
 tags-input .autocomplete .suggestion-item em {
-  font: normal bold 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-style: bold;
   color: #000;
   background-color: #fff;
 }

@@ -16,7 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'spring-data-rest',
-    'ngTagsInput'
+    'ngTagsInput',
+    'hateoas'
   ])
   .config(function ($routeProvider) {
     $routeProvider

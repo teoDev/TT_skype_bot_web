@@ -8,7 +8,7 @@
  * Controller of the angularjsSkypeBotApp
  */
 angular.module('angularjsSkypeBotApp')
-  .controller('MainCtrl', function ( $http, SpringDataRestAdapter) {
+  .controller('MainCtrl', function ( $http, SpringDataRestAdapter,QuestionService) {
     var that = this;
     that.questions = '';
     that.chosenTags= [
@@ -66,6 +66,31 @@ angular.module('angularjsSkypeBotApp')
     };
 
     that.Tag.loadTags();
+
+    that.removeQuestion = function(question){
+      var arr = question._links.question.href.split('/');
+
+      var idToDelete = arr[arr.length-1];
+      console.log(QuestionService.deleteQuestion(idToDelete));
+      SpringDataRestAdapter.process( $http.get('http://192.168.173.233:8080/questions')).then(function (processedResponse) {
+        that.questions = [];
+        that.questions = processedResponse._embeddedItems;
+
+        angular.forEach(that.questions, function(q) {
+          q.expanded = false;
+          that.Question.loadTags(q);
+        });
+
+      });
+
+    };
+
+
+
+
+
+
+
 
 
 

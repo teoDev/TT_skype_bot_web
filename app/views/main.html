@@ -20,6 +20,10 @@
         <a href="javascript:;" class="star">
           <i class="glyphicon glyphicon-star"></i>
         </a>
+
+        <a href="javascript:;" class="remove">
+          <i class="glyphicon glyphicon-remove" ng-click="main.removeQuestion(question);"></i>
+        </a>
       </td>
       <td>
         <div class="media" >
@@ -27,23 +31,23 @@
             <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
           </a>
           <div class="media-body">
-            <span class="media-meta pull-right">Febrero 13, 2016</span>
+            <span class="media-meta pull-right">Listopad 13, 2016</span>
             <h4 class="title">
               {{question.question}}
-              <span class="pull-right pagado">(Pagado)</span>
+              <span class="pull-right pagado">(Completed)</span>
             </h4>
 
             <p class="summary">Ut enim ad minim veniam, quis nostrud exercitation...</p>
               <div class="item-content-block tags">
 
-                <a href="#" ng-repeat="tag in question.tags">{{tag.name}}</a>
+                <a href="#" ng-repeat="tag in question.tags" >{{tag.name}}</a>
               </div>
             <div class="expand">
               <p>
-              <div  class="label" ng-if="question.expanded==false" data-toggle="collapse" data-target="#{{question.question}}" ng-click="question.expanded=true;main.Question.loadAnswers(question);">
+              <div  class="label" ng-if="question.expanded==false" data-toggle="collapse" data-target="#question_{{question._links.question.href.split('/').slice(-1).pop()}}" ng-click="question.expanded=true;main.Question.loadAnswers(question);">
                 <span    class="glyphicon glyphicon-chevron-down" ></span>Show answers
               </div>
-              <div class="label" ng-if="question.expanded==true" data-toggle="collapse" data-target="#{{question.question}}"  ng-click="question.expanded=false;">
+              <div class="label" ng-if="question.expanded==true" data-toggle="collapse" data-target="#question_{{question._links.question.href.split('/').slice(-1).pop()}}"  ng-click="question.expanded=false;">
                 <span    class="glyphicon glyphicon-chevron-up" ></span>Hide answers
 
               </div>
@@ -55,7 +59,7 @@
 
 
 
-            <div class="row answer collapse" id="{{question.question}}">
+            <div class="row answer collapse" id="question_{{question._links.question.href.split('/').slice(-1).pop()}}">
               <div class="panel panel-default widget">
                 <div class="panel-heading">
                   <span class="glyphicon glyphicon-comment"></span>
